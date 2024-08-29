@@ -30,7 +30,7 @@ jobs:
         mysql-version: '8.4'
 
     - name: Create schema patrones-parcial1
-      run: mysql -uroot -e 'CREATE SCHEMA "patrones-parcial1"'
+      run: mysql -uroot -e 'CREATE SCHEMA `patrones-parcial1`'
 
     - uses: actions/checkout@v4
     - name: Set up JDK 17
