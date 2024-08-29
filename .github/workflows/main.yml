@@ -86,7 +86,7 @@ jobs:
     - name: Commit and Push Manifest
       env:
         REPO_KEY: ${{secrets.TOKEN}}
-        USERNAME: github-actions[bot]
+        USERNAME: pipe1408
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
