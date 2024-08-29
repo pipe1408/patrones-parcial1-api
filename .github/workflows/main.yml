@@ -71,7 +71,7 @@ jobs:
         BRANCH: 'main'
       run: |
         pwd
-        git clone --single-branch --branch ${{ env.BRANCH }} ${{ env.EXTERNAL_REPO }} patrones-parcial1-manifests
+        git clone --single-branch --branch ${{ env.BRANCH }} ${{ env.EXTERNAL_REPO }} /home/runner/work/patrones-parcial1-manifests
         cd patrones-parcial1-manifests
         
     - name: yq - portable yaml processor
@@ -79,7 +79,7 @@ jobs:
 
     - name: Modify K8S Manifest
       run: |
-        cd patrones-parcial1-manifests
+        cd /home/runner/work/patrones-parcial1-manifests
         yq eval ".spec.template.spec.containers[0].image = \"pipeba1408/patrones-parcial1-api:${{ env.IMAGE_TAG }}\"" -i api-deployment.yaml
 
     - name: Commit and Push Manifest
