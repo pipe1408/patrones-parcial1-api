@@ -85,7 +85,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
       run: |
         git config user.email "action@github.com"
-        git config local user.name "GitHub Action"
+        git config user.name "GitHub Action"
         git config --unset-all http.https://github.com/.extraheader
         git add .
         git commit -m "Actualiza imagen a pipeba1408/patrones-parcial1-api:${{ env.IMAGE_TAG }}"
