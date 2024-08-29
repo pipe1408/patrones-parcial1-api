@@ -8,6 +8,7 @@ on:
 
 env:
   DB_SERVER_IP: localhost
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
 permissions:
   contents: write
