@@ -28,6 +28,7 @@ jobs:
       uses: shogo82148/actions-setup-mysql@v1.37.0
       with:
         mysql-version: '8.4'
+        root-password: 'password'
 
     - name: Create schema patrones-parcial1
       run: mysql -uroot -e 'CREATE SCHEMA patrones_parcial1'
