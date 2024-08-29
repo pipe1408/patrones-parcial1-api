@@ -88,7 +88,7 @@ jobs:
         REPO_KEY: ${{secrets.TOKEN}}
         USERNAME: pipe1408
       run: |
-        cd cd /home/runner/work/patrones-parcial1-manifests
+        cd /home/runner/work/patrones-parcial1-manifests
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add --all
