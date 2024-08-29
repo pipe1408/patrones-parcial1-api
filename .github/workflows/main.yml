@@ -86,8 +86,8 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add .
         git commit -m "Actualiza imagen a pipeba1408/patrones-parcial1-api:${{ env.IMAGE_TAG }}"
-        git remote set-url origin https://pipeba1408:${{ secrets.GITHUB_TOKEN }}@github.com/pipe1408/patrones-parcial1-manifests.git
-        git push
+        git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/pipe1408/patrones-parcial1-manifests.git
+        git push origin main
 
 
 
