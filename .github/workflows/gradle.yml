@@ -25,7 +25,8 @@ jobs:
       uses: shogo82148/actions-setup-mysql@v1.37.0
       with:
         mysql-version: '8.4'
-      run: mysql -uroot -e 'SELECT version()'
+
+    - run: mysql -uroot -e 'SELECT version()'
 
     - uses: actions/checkout@v4
     - name: Set up JDK 17
