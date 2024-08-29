@@ -8,6 +8,7 @@ on:
 
 env:
   DB_SERVER_IP: localhost
+
 permissions:
   contents: write
 
