@@ -16,7 +16,6 @@ on:
 env:
   DB_SERVER_IP: localhost
 
-jobs:
   build:
 
     runs-on: ubuntu-latest
@@ -31,7 +30,7 @@ jobs:
         root-password: 'password'
 
     - name: Create schema patrones-parcial1
-      run: mysql -uroot -ppassword 'CREATE SCHEMA IF NOT EXISTS patrones_parcial1'
+      run: mysql -uroot -ppassword -e 'CREATE SCHEMA IF NOT EXISTS patrones_parcial1'
 
     - uses: actions/checkout@v4
     - name: Set up JDK 17
