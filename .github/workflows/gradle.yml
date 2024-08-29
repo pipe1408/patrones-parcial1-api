@@ -16,6 +16,7 @@ on:
 env:
   DB_SERVER_IP: localhost
 
+jobs:
   build:
 
     runs-on: ubuntu-latest
