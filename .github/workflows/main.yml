@@ -56,8 +56,10 @@ jobs:
         username: ${{ vars.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - run: docker build . --file Dockerfile --tag ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api:$(date +%s)
-    - run: docker push ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api -a
+    - name: Build and Push Docker image
+      run: |
+        docker build . --file Dockerfile --tag ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api:$(date +%s)
+        docker push ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api -a
 
   dependency-submission:
 
