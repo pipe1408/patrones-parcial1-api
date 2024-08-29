@@ -8,7 +8,6 @@ on:
 
 env:
   DB_SERVER_IP: localhost
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
 permissions:
   contents: write
@@ -85,13 +84,15 @@ jobs:
         yq eval ".spec.template.spec.containers[0].image = \"pipeba1408/patrones-parcial1-api:${{ env.IMAGE_TAG }}\"" -i api-deployment.yaml
 
     - name: Commit and Push Manifest
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add .
+        git add --all
         git status
         git commit -m "Actualiza imagen a pipeba1408/patrones-parcial1-api:${{ env.IMAGE_TAG }}"
-        git remote set-url origin https://${{ env.GITHUB_TOKEN }}@github.com/pipe1408/patrones-parcial1-manifests.git
+        git remote set-url origin https://github.com/pipe1408/patrones-parcial1-manifests.git
         git push
 
 
