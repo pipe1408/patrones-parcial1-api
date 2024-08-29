@@ -62,6 +62,15 @@ jobs:
         docker build . --file Dockerfile --tag ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api:${{ env.IMAGE_TAG }}
         docker push ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api -a
 
+    - name: Clone deployment repository
+      env:
+        EXTERNAL_REPO: 'https://github.com/pipe1408/patrones-parcial1-manifests.git'
+        BRANCH: 'main'
+      run: |
+        git clone --single-branch --branch ${{ env.BRANCH }} ${{ env.EXTERNAL_REPO }} patrones-parcial1-manifests
+        cd patrones-parcial1-manifests
+      
+
   dependency-submission:
 
     runs-on: ubuntu-latest
