@@ -93,7 +93,7 @@ jobs:
         git add --all
         git status
         git commit -m "Actualiza imagen a pipeba1408/patrones-parcial1-api:${{ env.IMAGE_TAG }}"
-        git push https://$USERNAME:$REPO_KEY@github.com/pipe1408/patrones-parcial1-manifests.git
+        git push https://$REPO_KEY@github.com/pipe1408/patrones-parcial1-manifests.git
 
 
 
