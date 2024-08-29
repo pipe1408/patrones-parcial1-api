@@ -91,7 +91,7 @@ jobs:
         git add .
         git status
         git commit -m "Actualiza imagen a pipeba1408/patrones-parcial1-api:${{ env.IMAGE_TAG }}"
-        git remote set-url origin https://${{ secrets.TOKEN }}@github.com/pipe1408/patrones-parcial1-manifests.git
+        git remote set-url origin https://${{ env.GITHUB_TOKEN }}@github.com/pipe1408/patrones-parcial1-manifests.git
         git push
 
 
