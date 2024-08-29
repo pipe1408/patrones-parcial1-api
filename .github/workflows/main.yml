@@ -8,6 +8,7 @@ on:
 
 env:
   DB_SERVER_IP: localhost
+  IMAGE_TAG: $(date +%s)
 
 jobs:
   build:
@@ -58,7 +59,7 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        docker build . --file Dockerfile --tag ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api:$(date +%s)
+        docker build . --file Dockerfile --tag ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api:${{ env.IMAGE_TAG }}
         docker push ${{ vars.DOCKERHUB_USERNAME }}/patrones-parcial1-api -a
 
   dependency-submission:
