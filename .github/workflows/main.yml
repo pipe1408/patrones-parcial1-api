@@ -73,7 +73,7 @@ jobs:
         pwd
         mkdir /home/runner/work/patrones-parcial1-manifests
         git clone --single-branch --branch ${{ env.BRANCH }} ${{ env.EXTERNAL_REPO }} /home/runner/work/patrones-parcial1-manifests
-        cd patrones-parcial1-manifests
+        cd /home/runner/work/patrones-parcial1-manifests
         
     - name: yq - portable yaml processor
       uses: mikefarah/yq@v4.44.3
