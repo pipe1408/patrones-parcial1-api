@@ -85,15 +85,15 @@ jobs:
 
     - name: Commit and Push Manifest
       env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        REPO_KEY: ${{secrets.TOKEN}}
+        USERNAME: github-actions[bot]
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add --all
         git status
         git commit -m "Actualiza imagen a pipeba1408/patrones-parcial1-api:${{ env.IMAGE_TAG }}"
-        git remote set-url origin https://github.com/pipe1408/patrones-parcial1-manifests.git
-        git push
+        git push https://$USERNAME:$REPO_KEY@github.com/myorg/documentation.git
 
 
 
