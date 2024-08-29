@@ -71,6 +71,7 @@ jobs:
         BRANCH: 'main'
       run: |
         pwd
+        mkdir /home/runner/work/patrones-parcial1-manifests
         git clone --single-branch --branch ${{ env.BRANCH }} ${{ env.EXTERNAL_REPO }} /home/runner/work/patrones-parcial1-manifests
         cd patrones-parcial1-manifests
         
